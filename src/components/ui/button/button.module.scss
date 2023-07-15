@@ -1,0 +1,39 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.button {
+	@include transition(background-color);
+	background-color: $gray;
+	color: $white;
+	border-radius: $radius;
+	padding: 12px 30px;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: capitalize;
+	-webkit-box-shadow: 0px 9px 10px 6px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 0px 9px 10px 6px rgba(34, 60, 80, 0.2);
+box-shadow: 0px 9px 10px 6px rgba(34, 60, 80, 0.2);
+
+	&:disabled {
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	&:hover {
+		background-color: lighten($gray, 3%);
+	}
+
+	&.green {
+		background-color: $secondary;
+		&:hover {
+			background-color: rgba($secondary, 60%);
+		}
+	}
+
+	&.purple {
+		background-color: rgba(#ef0b0b, 50%);
+		&:hover {
+			background-color: rgba(#ef0b0b, 70%);
+		}
+	}
+}
